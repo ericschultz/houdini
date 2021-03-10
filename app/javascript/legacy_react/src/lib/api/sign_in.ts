@@ -1,7 +1,7 @@
 // License: LGPL-3.0-or-later
 import * as $ from 'jquery';
 import {Configuration} from "../../../api/configuration";
-import Routes from '../../../../routes';
+import userRoutes from '../../../../routes/users';
 
 export interface WebUserSignInOut {
   postSignIn(loginInfo: WebLoginModel): Promise<any>;
@@ -17,7 +17,7 @@ function postSignIn(loginInfo: WebLoginModel): Promise<any> {
   }
 
 
-  const localVarPath = Routes.user_session_url({format: "json"});
+  const localVarPath = userRoutes.user_session_url();
   // to determine the Content-Type header
   let consumes: string[] = [
     'application/json'
